@@ -14,13 +14,14 @@ const testimonials = [
       "Absolutely breathtaking! Virginia's artwork has completely transformed my space. The colors, the details, and the emotion in every brushstroke make it truly one of a kind.",
     rating: 5,
   },
+
   {
     id: 2,
-    name: "Michael L.",
-    role: "Private Client",
-    image: "/images/michael.jpg", // Replace with actual image path
+    name: "Sophia M.",
+    role: "Interior Designer",
+    image: "/images/sophia.jpg", // Replace with actual image path
     review:
-      "I commissioned a custom floral painting, and Virginia captured exactly what I had envisioned. Her attention to detail and artistic talent are unmatched!",
+      "Seeing Virginia's art in person is even more stunning than in photos. The texture, the brushstrokes, the warmth—it's something truly special. I'm in love with my new painting!",
     rating: 5,
   },
   {
@@ -34,15 +35,6 @@ const testimonials = [
   },
   {
     id: 4,
-    name: "Sophia M.",
-    role: "Interior Designer",
-    image: "/images/sophia.jpg", // Replace with actual image path
-    review:
-      "Seeing Virginia's art in person is even more stunning than in photos. The texture, the brushstrokes, the warmth—it's something truly special. I'm in love with my new painting!",
-    rating: 5,
-  },
-  {
-    id: 5,
     name: "Sophia M.",
     role: "Interior Designer",
     image: "/images/sophia.jpg", // Replace with actual image path

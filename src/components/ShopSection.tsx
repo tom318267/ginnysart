@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
 import { usePaintings } from "../hooks/usePaintings";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
 // Import your Lottie animation JSON file
 import paintingAnimation from "../assets/painting-animation.json";
+
+// Add dynamic import for Lottie with SSR disabled
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 
 const selectClassName = `p-2 pl-4 pr-10 border border-gray-300 rounded-md text-sm w-40 
   focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-custom-purple

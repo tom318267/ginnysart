@@ -47,11 +47,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/contact.js"
     ],
-    "/custom-painting": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/custom-painting.js"
-    ],
     "/shop": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
