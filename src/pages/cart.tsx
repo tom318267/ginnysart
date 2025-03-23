@@ -23,7 +23,7 @@ const CartPage = () => {
 
   return (
     <section className="container mx-auto px-4 lg:px-8 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-black text-left">
+      <h1 className="text-4xl md:text-5xl leading-tight md:leading-[60px] font-bold mb-8 text-black text-center md:text-left">
         Shopping Cart
       </h1>
 

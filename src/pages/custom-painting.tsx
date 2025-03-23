@@ -78,10 +78,10 @@ const CustomPaintingPage = () => {
           {/* Information Side */}
           <div className="space-y-8 animate-fade-up opacity-0">
             <div>
-              <h1 className="text-4xl font-bold text-black mb-4 text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight md:leading-[60px] text-black mb-4 text-center lg:text-left">
                 Request a Custom Painting
               </h1>
-              <p className="text-black font-light text-center lg:text-left">
+              <p className="text-black text-base lg:text-lg font-light mb-6 text-center lg:text-left">
                 Let's create something unique together. Fill out the form to
                 start the conversation about your custom painting.
               </p>
@@ -94,35 +94,39 @@ const CustomPaintingPage = () => {
                 </h3>
                 <ol className="space-y-4">
                   <li className="flex gap-4">
-                    <span className="bg-custom-purple text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+                    <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       1
                     </span>
-                    <p className="text-gray-600">
-                      Submit your request with your ideas and preferences
+                    <p className="text-gray-600 text-base lg:text-lg">
+                      Fill out the form with your painting preferences and
+                      requirements
                     </p>
                   </li>
                   <li className="flex gap-4">
-                    <span className="bg-custom-purple text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+                    <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       2
                     </span>
-                    <p className="text-gray-600">
-                      Receive a response within 48 hours to discuss details
+                    <p className="text-gray-600 text-base lg:text-lg">
+                      We'll review your request and contact you to discuss
+                      details
                     </p>
                   </li>
                   <li className="flex gap-4">
-                    <span className="bg-custom-purple text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+                    <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       3
                     </span>
-                    <p className="text-gray-600">
-                      Review the proposal and timeline
+                    <p className="text-gray-600 text-base lg:text-lg">
+                      Once approved, we'll begin creating your custom
+                      masterpiece
                     </p>
                   </li>
                   <li className="flex gap-4">
-                    <span className="bg-custom-purple text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0">
+                    <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       4
                     </span>
-                    <p className="text-gray-600">
-                      Your custom painting journey begins!
+                    <p className="text-gray-600 text-base lg:text-lg">
+                      Your painting will be carefully packaged and delivered to
+                      you
                     </p>
                   </li>
                 </ol>

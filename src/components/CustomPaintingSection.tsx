@@ -46,7 +46,7 @@ const CustomPaintingSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight md:leading-[60px] opacity-0 [.animate-in_&]:animate-fade-up-2">
             Personalized Art, Created Just for You
           </h2>
-          <p className="text-lg font-light text-black mb-8 opacity-0 [.animate-in_&]:animate-fade-up-3">
+          <p className="text-base lg:text-lg font-light text-black mb-8 opacity-0 [.animate-in_&]:animate-fade-up-3">
             Work with Virginia to create a custom painting made just for you.
             Whether it's a floral piece, a scenic landscape, or something
             completely unique, every artwork is handcrafted with care and

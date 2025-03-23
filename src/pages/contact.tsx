@@ -32,10 +32,10 @@ const ContactPage = () => {
           {/* Contact Information */}
           <div className="space-y-8 animate-fade-up opacity-0">
             <div>
-              <h1 className="text-4xl font-bold text-black mb-4 text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 text-center lg:text-left">
                 Get in Touch
               </h1>
-              <p className="text-black font-light text-center lg:text-left">
+              <p className="text-black font-light text-base lg:text-lg mb-6 text-center lg:text-left">
                 Have a question about a painting or interested in commissioning
                 a piece? I'd love to hear from you.
               </p>
@@ -60,7 +60,9 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
-                  <p className="text-gray-600">(215) 555-0123</p>
+                  <p className="text-gray-600 text-base lg:text-lg">
+                    (215) 555-0123
+                  </p>
                 </div>
               </div>
 
@@ -82,7 +84,9 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">Email</h3>
-                  <p className="text-gray-600">virginia@example.com</p>
+                  <p className="text-gray-600 text-base lg:text-lg">
+                    virginia@example.com
+                  </p>
                 </div>
               </div>
 
@@ -112,7 +116,9 @@ const ContactPage = () => {
                   <h3 className="text-lg font-semibold text-gray-800">
                     Location
                   </h3>
-                  <p className="text-gray-600">Langhorne, Pennsylvania</p>
+                  <p className="text-gray-600 text-base lg:text-lg">
+                    Langhorne, Pennsylvania
+                  </p>
                 </div>
               </div>
             </div>

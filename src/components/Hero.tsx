@@ -48,7 +48,7 @@ const Hero = () => {
             {/* Picture Frame (background) */}
             <div className="w-full h-full animate-frameRotate [animation-delay:800ms] opacity-0">
               <Image
-                src="/images/picframe.png"
+                src="/images/picframe.webp"
                 alt="Picture Frame"
                 width={426}
                 height={485}
@@ -60,7 +60,7 @@ const Hero = () => {
             {/* Painting (on top of the frame, moved slightly right) */}
             <div className="absolute top-[10%] left-[12%] w-[80%] lg:w-[85%] aspect-[0.71] animate-paintingFloat [animation-delay:1200ms] opacity-0">
               <Image
-                src="/images/heropic.png"
+                src="/images/heropic.webp"
                 alt="Featured Painting"
                 width={347}
                 height={489}

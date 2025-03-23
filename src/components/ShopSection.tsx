@@ -98,7 +98,7 @@ const ShopSection: React.FC = () => {
     <section className="py-16 px-4 lg:px-8 bg-gradient-to-br from-[#F8F7FF] via-[#FCFAFF] to-[#FFFFFF]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col px-4 lg:px-8 md:flex-row md:items-center md:justify-between mb-12">
-          <h1 className="text-4xl font-bold text-black animate-shopFadeIn mb-4 md:mb-0 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl leading-tight md:leading-[60px] font-bold text-black animate-shopFadeIn mb-4 md:mb-0 text-center md:text-left">
             Available Paintings
           </h1>
 
