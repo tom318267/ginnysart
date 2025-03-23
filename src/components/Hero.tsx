@@ -24,7 +24,7 @@ const Hero = () => {
             <h5 className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4 animate-fadeIn [animation-delay:200ms] opacity-0">
               Virginia's Art Studio
             </h5>
-            <h1 className="text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight md:leading-[60px] lg:leading-[80px] animate-slideUp [animation-delay:400ms] opacity-0">
+            <h1 className="text-4xl lg:text-6xl font-bold text-black mb-6 leading-tight md:leading-[60px] lg:leading-[80px] animate-slideUp [animation-delay:400ms] opacity-0">
               Bringing Beauty to Life One Brushstroke at a Time
             </h1>
             <p className="text-base lg:text-lg font-light text-black mb-8 max-w-[559px] mx-auto lg:mx-0 animate-slideUp [animation-delay:600ms] opacity-0">

@@ -10,5 +10,17 @@
     "files": [
       "static/chunks/src_components_Navbar_tsx.js"
     ]
+  },
+  "../components/ShopSection.tsx -> lottie-react": {
+    "id": "../components/ShopSection.tsx -> lottie-react",
+    "files": [
+      "static/chunks/node_modules_lottie-react_build_index_umd_js.js"
+    ]
+  },
+  "category/[slug].tsx -> lottie-react": {
+    "id": "category/[slug].tsx -> lottie-react",
+    "files": [
+      "static/chunks/node_modules_lottie-react_build_index_umd_js.js"
+    ]
   }
 }

@@ -59,7 +59,7 @@ const EveryPaintingSection = () => {
             My Passion
           </h5>
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight md:leading-[60px] text-gray-900 mb-8 relative opacity-0 translate-y-10 animate-on-scroll">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight md:leading-[60px] text-gray-900 mb-8 relative opacity-0 translate-y-10 animate-on-scroll">
             Every Painting Tells a Story
           </h2>
 

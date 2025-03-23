@@ -92,7 +92,7 @@ const TestimonialsSection = () => {
         <h5 className="text-light-purple uppercase font-normal text-[16px] md:text-[20px] mb-4">
           Client Testimonials
         </h5>
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight md:leading-[60px] text-gray-900 mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight md:leading-[60px] text-gray-900 mb-8">
           What Customers Are Saying
         </h2>
         <p className="text-base lg:text-lg font-light text-black mb-14">

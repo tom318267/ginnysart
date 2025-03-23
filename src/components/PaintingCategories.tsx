@@ -74,7 +74,7 @@ const PaintingCategories = () => {
       <h5 className="text-light-purple uppercase font-normal text-[16px] md:text-[20px] tracking-wide mb-4 animate-on-scroll opacity-0">
         Painting Categories
       </h5>
-      <h2 className="text-4xl md:text-5xl leading-tight md:leading-[80px] font-bold mt-2 mb-4 animate-on-scroll opacity-0">
+      <h2 className="text-3xl md:text-5xl leading-tight md:leading-[80px] font-bold mt-2 mb-4 animate-on-scroll opacity-0">
         Browse by Category
       </h2>
       <p className="text-base lg:text-lg font-light text-black mb-16 animate-on-scroll opacity-0">
