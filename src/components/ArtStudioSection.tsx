@@ -12,7 +12,7 @@ const ArtStudioSection = () => {
 
       <div
         ref={contentRef}
-        className={`container px-4 py-12 md:px-8 mx-auto grid md:grid-cols-2 gap-8 relative z-10 transition-opacity duration-[2000ms] delay-[800ms] ${
+        className={`container px-4 py-12 md:px-8 mx-auto grid md:grid-cols-2 gap-8 relative z-10 transition-opacity duration-[1000ms] delay-[300ms] ${
           contentIsInView ? "animate-scrollFadeIn" : "opacity-0"
         }`}
       >

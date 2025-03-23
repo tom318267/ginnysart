@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const PaintingCategories = () => {
   useEffect(() => {
@@ -31,49 +32,57 @@ const PaintingCategories = () => {
     return () => observer.disconnect();
   }, []);
 
+  const categories = [
+    {
+      title: "Abstract",
+      slug: "abstract",
+      image: "/images/abstract.svg",
+      width: 156,
+      height: 149,
+      description:
+        "Modern and expressive, these abstract paintings bring energy and depth to any space.",
+      button: "DISCOVER ABSTRACTS",
+      animationClass: "animate-on-scroll-1",
+    },
+    {
+      title: "Landscape",
+      slug: "landscape",
+      image: "/images/landscape.svg",
+      width: 244,
+      height: 166,
+      description:
+        "Hand-painted scenery that captures the beauty of the great outdoors in every brushstroke.",
+      button: "EXPLORE LANDSCAPES",
+      animationClass: "animate-on-scroll-2",
+    },
+    {
+      title: "Floral",
+      slug: "floral",
+      image: "/images/floral.svg",
+      width: 120,
+      height: 189,
+      description:
+        "Bring the elegance of nature into your space with delicate, hand-painted florals full of color and life.",
+      button: "SHOP FLORAL ART",
+      animationClass: "animate-on-scroll-3",
+    },
+  ];
+
   return (
-    <section className="py-[120px] px-6 md:px-20 text-center">
+    <section className="py-[60px] lg:py-[120px] px-4 lg:px-8 text-center">
       {/* Title */}
       <h5 className="text-light-purple uppercase font-normal text-[16px] md:text-[20px] tracking-wide mb-4 animate-on-scroll opacity-0">
         Painting Categories
       </h5>
-      <h2 className="text-3xl md:text-5xl leading-tight md:leading-[80px] font-bold mt-2 mb-16 animate-on-scroll opacity-0">
+      <h2 className="text-4xl md:text-5xl leading-tight md:leading-[80px] font-bold mt-2 mb-4 animate-on-scroll opacity-0">
         Browse by Category
       </h2>
-      <div className="grid md:grid-cols-3 gap-12 container mx-auto">
-        {/* Categories */}
-        {[
-          {
-            title: "Abstract",
-            image: "/images/abstract.svg",
-            width: 156,
-            height: 149,
-            description:
-              "Modern and expressive, these abstract paintings bring energy and depth to any space.",
-            button: "DISCOVER ABSTRACTS",
-            animationClass: "animate-on-scroll-1",
-          },
-          {
-            title: "Landscape",
-            image: "/images/landscape.svg",
-            width: 244,
-            height: 166,
-            description:
-              "Hand-painted scenery that captures the beauty of the great outdoors in every brushstroke.",
-            button: "EXPLORE LANDSCAPES",
-            animationClass: "animate-on-scroll-2",
-          },
-          {
-            title: "Floral",
-            image: "/images/floral.svg",
-            width: 120,
-            height: 189,
-            description:
-              "Bring the elegance of nature into your space with delicate, hand-painted florals full of color and life.",
-            button: "SHOP FLORAL ART",
-            animationClass: "animate-on-scroll-3",
-          },
-        ].map((category) => (
+      <p className="text-base lg:text-lg font-light text-black mb-16 animate-on-scroll opacity-0">
+        Explore our curated collection of hand-painted artwork across different
+        styles
+      </p>
+      <div className="grid md:grid-cols-3 gap-12 px-4 lg:px-8 container mx-auto">
+        {categories.map((category) => (
           <div
             key={category.title}
             className={`flex flex-col items-center space-y-8 ${category.animationClass} opacity-0`}
@@ -89,17 +98,18 @@ const PaintingCategories = () => {
                 />
               </div>
               <h4 className="text-2xl font-semibold">{category.title}</h4>
-              <p className="text-base md:text-lg font-light text-gray-600">
+              <p className="text-base md:text-lg font-light text-black">
                 {category.description}
               </p>
             </div>
-            <button
-              className="inline-block uppercase relative bg-custom-purple text-white px-[30px] lg:px-[40px] py-[15px] lg:py-[20px] rounded shadow-md text-[14px] lg:text-[16px] w-full max-w-[300px]
-              before:absolute before:inset-0 before:bg-gradient-to-r before:from-custom-purple before:to-light-purple before:opacity-0 before:transition-opacity before:duration-300 before:rounded-md
-              hover:before:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out overflow-hidden"
+            <Link
+              href={`/category/${category.slug}`}
+              className="inline-block uppercase relative bg-custom-purple text-white px-[30px] lg:px-[40px] py-[15px] lg:py-[20px] rounded-md shadow-md text-[14px] lg:text-[16px] w-full max-w-[300px]
+                before:absolute before:inset-0 before:bg-gradient-to-r before:from-custom-purple before:to-light-purple before:opacity-0 before:transition-opacity before:duration-300 before:rounded-md
+                hover:before:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out overflow-hidden"
             >
               <span className="relative z-10">{category.button}</span>
-            </button>
+            </Link>
           </div>
         ))}
       </div>
