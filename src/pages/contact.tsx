@@ -39,8 +39,8 @@ const ContactPage = () => {
                 Get in Touch
               </h1>
               <p className="text-black font-light text-base lg:text-lg mb-6 text-center lg:text-left">
-                Have a question about a painting or interested in commissioning
-                a piece? I'd love to hear from you.
+                Have a question about a painting or a piece? I'd love to hear
+                from you.
               </p>
             </div>
 
