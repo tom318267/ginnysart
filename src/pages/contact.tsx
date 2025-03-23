@@ -32,6 +32,9 @@ const ContactPage = () => {
           {/* Contact Information */}
           <div className="space-y-8 animate-fade-up opacity-0">
             <div>
+              <h5 className="text-light-purple uppercase text-[16px] md:text-[20px] tracking-wide mb-4 text-center lg:text-left">
+                Let's Connect
+              </h5>
               <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 text-center lg:text-left">
                 Get in Touch
               </h1>
