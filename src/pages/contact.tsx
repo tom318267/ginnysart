@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -8,13 +7,43 @@ const ContactPage = () => {
     subject: "",
     message: "",
   });
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message");
+      }
+
+      setStatus("success");
+      setMessage(
+        "Thank you! We've received your message and will get back to you soon."
+      );
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      setStatus("error");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again later."
+      );
+    }
   };
 
   return (
@@ -129,6 +158,16 @@ const ContactPage = () => {
 
           {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-lg p-8 animate-fade-up-2 opacity-0">
+            {status === "success" && (
+              <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-md">
+                {message}
+              </div>
+            )}
+            {status === "error" && (
+              <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-md">
+                {message}
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -192,11 +231,19 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="w-full inline-block uppercase relative bg-custom-purple text-white px-[40px] py-[20px] rounded-md text-[16px] shadow-md
+                disabled={status === "submitting"}
+                className={`w-full inline-block uppercase relative bg-custom-purple text-white px-[40px] py-[20px] rounded-md text-[16px] shadow-md
                   before:absolute before:inset-0 before:bg-gradient-to-r before:from-custom-purple before:to-light-purple before:opacity-0 before:transition-opacity before:duration-300 before:rounded-md
-                  hover:before:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out overflow-hidden"
+                  hover:before:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out overflow-hidden
+                  ${
+                    status === "submitting"
+                      ? "opacity-75 cursor-not-allowed"
+                      : ""
+                  }`}
               >
-                <span className="relative z-10">Send Message</span>
+                <span className="relative z-10">
+                  {status === "submitting" ? "Sending..." : "Send Message"}
+                </span>
               </button>
             </form>
           </div>
