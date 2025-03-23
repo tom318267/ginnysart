@@ -103,7 +103,7 @@ const TestimonialsSection = () => {
       </div>
 
       {/* Swiper Carousel */}
-      <div className="carousel-wrapper px-4 lg:px-8 container mx-auto">
+      <div className="carousel-wrapper px-4 lg:px-0 container mx-auto">
         <div className="relative">
           <div className="absolute right-4 top-[-60px] flex gap-2 z-10">
             <button className="prev-btn bg-[#D6B4FC] hover:bg-[#C49AFF] text-black p-2 rounded-full w-12 h-12 flex items-center justify-center transition-colors">
