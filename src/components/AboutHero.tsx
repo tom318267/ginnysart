@@ -20,7 +20,7 @@ const AboutHero = () => {
         <h5 className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4">
           Virginia Hampton
         </h5>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight md:leading-[60px] lg:leading-[80px]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight md:leading-[60px] lg:leading-[80px]">
           Meet the Artist Behind the Brush
         </h1>
         <p className="text-base md:text-lg font-light text-black mt-4 max-w-[680px] mx-auto">

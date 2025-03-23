@@ -19,7 +19,7 @@ const ContactPage = () => {
 
   return (
     <section
-      className="relative py-16 px-4 lg:px-8 bg-cover bg-center bg-no-repeat"
+      className="relative py-[60px] lg:py-[120px] px-4 lg:px-8 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: 'url("/images/purplepaint.jpg")',
         imageRendering: "crisp-edges",

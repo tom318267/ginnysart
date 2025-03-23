@@ -63,7 +63,7 @@ const CustomPaintingPage = () => {
 
   return (
     <section
-      className="relative py-16 px-4 lg:px-8 bg-cover bg-center bg-no-repeat"
+      className="relative py-[60px] lg:py-[120px] px-4 lg:px-8 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: 'url("/images/artstudio.jpg")',
         imageRendering: "crisp-edges",
@@ -97,7 +97,7 @@ const CustomPaintingPage = () => {
                     <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       1
                     </span>
-                    <p className="text-gray-600 text-base lg:text-lg">
+                    <p className="text-gray-600 text-base">
                       Fill out the form with your painting preferences and
                       requirements
                     </p>
@@ -106,7 +106,7 @@ const CustomPaintingPage = () => {
                     <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       2
                     </span>
-                    <p className="text-gray-600 text-base lg:text-lg">
+                    <p className="text-gray-600 text-base">
                       We'll review your request and contact you to discuss
                       details
                     </p>
@@ -115,7 +115,7 @@ const CustomPaintingPage = () => {
                     <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       3
                     </span>
-                    <p className="text-gray-600 text-base lg:text-lg">
+                    <p className="text-gray-600 text-base">
                       Once approved, we'll begin creating your custom
                       masterpiece
                     </p>
@@ -124,7 +124,7 @@ const CustomPaintingPage = () => {
                     <span className="bg-custom-purple text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">
                       4
                     </span>
-                    <p className="text-gray-600 text-base lg:text-lg">
+                    <p className="text-gray-600 text-base">
                       Your painting will be carefully packaged and delivered to
                       you
                     </p>
