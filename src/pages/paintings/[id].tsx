@@ -144,28 +144,38 @@ const PaintingDetail = () => {
             </button>
 
             {/* Shopping Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 border-t border-gray-300 pt-8">
-              <div className="flex items-center space-x-3">
-                <FaShippingFast className="text-2xl text-custom-purple" />
-                <div>
-                  <h3 className="font-semibold">Free Shipping</h3>
-                  <p className="text-sm text-gray-600">On orders over $500</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 border-t border-gray-300 pt-8">
+              {[
+                {
+                  icon: (
+                    <FaShippingFast className="text-3xl text-custom-purple" />
+                  ),
+                  title: "Free Shipping",
+                  desc: "On orders over $500",
+                },
+                {
+                  icon: (
+                    <FaRegCreditCard className="text-3xl text-custom-purple" />
+                  ),
+                  title: "Secure Payment",
+                  desc: "100% secure payment",
+                },
+                {
+                  icon: <FaShieldAlt className="text-3xl text-custom-purple" />,
+                  title: "Money-Back Guarantee",
+                  desc: "30 day guarantee",
+                },
+              ].map((item, index) => (
+                <div key={index} className="flex items-start space-x-4">
+                  {item.icon}
+                  <div className="pt-0.5">
+                    <h3 className="font-semibold text-gray-900">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FaRegCreditCard className="text-2xl text-custom-purple" />
-                <div>
-                  <h3 className="font-semibold">Secure Payment</h3>
-                  <p className="text-sm text-gray-600">100% secure payment</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FaShieldAlt className="text-2xl text-custom-purple" />
-                <div>
-                  <h3 className="font-semibold">Money-Back Guarantee</h3>
-                  <p className="text-sm text-gray-600">30 day guarantee</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
