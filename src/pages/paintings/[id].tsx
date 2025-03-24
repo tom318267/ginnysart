@@ -110,7 +110,10 @@ const PaintingDetail = () => {
               <h1 className="text-4xl font-bold text-gray-800 mb-2">
                 {painting.title}
               </h1>
-              <p className="text-xl text-gray-600">By {painting.artist}</p>
+              <p className="text-xl text-gray-600 mb-4">By {painting.artist}</p>
+              <p className="text-gray-700 leading-relaxed">
+                {painting.description}
+              </p>
             </div>
 
             <div className="space-y-4">
@@ -122,17 +125,11 @@ const PaintingDetail = () => {
                 <span className="font-semibold">Category:</span>{" "}
                 {painting.category}
               </p>
-              {painting.description && (
-                <p className="text-gray-700">
-                  <span className="font-semibold">Description:</span>
-                  <br />
-                  {painting.description}
-                </p>
-              )}
-              <p className="text-3xl font-bold text-gray-800">
-                ${painting.price}
-              </p>
             </div>
+
+            <p className="text-3xl font-bold text-gray-800">
+              ${painting.price}
+            </p>
 
             <button
               className="w-full md:w-auto inline-block uppercase relative bg-custom-purple text-white px-8 py-4 rounded shadow-md text-lg

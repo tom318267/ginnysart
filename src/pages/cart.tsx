@@ -62,9 +62,17 @@ const CartPage = () => {
                       />
                     </div>
                     <div className="flex-grow text-left">
-                      <h3 className="text-lg font-semibold text-gray-800">
-                        {item.title}
-                      </h3>
+                      <div className="flex flex-col">
+                        <h3 className="text-base font-medium text-gray-900">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-500">
+                          By {item.artist}
+                        </p>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Dimensions: {item.dimensions}
+                        </p>
+                      </div>
                       <p className="text-gray-600">${item.price}</p>
                     </div>
                   </div>
