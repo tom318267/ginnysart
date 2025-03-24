@@ -1,3 +1,4 @@
+import React from "react";
 import { useRouter } from "next/router";
 import { usePaintings } from "../../hooks/usePaintings";
 import Link from "next/link";
@@ -6,6 +7,13 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 import toast from "react-hot-toast";
 import { FaShippingFast, FaRegCreditCard, FaShieldAlt } from "react-icons/fa";
+import dynamic from "next/dynamic";
+import paintingAnimation from "../../assets/painting-animation.json";
+
+// Add dynamic import for Lottie with SSR disabled
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 
 const PaintingDetail = () => {
   const router = useRouter();
@@ -36,7 +44,13 @@ const PaintingDetail = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-custom-purple"></div>
+        <div className="w-32 h-32">
+          <Lottie
+            animationData={paintingAnimation}
+            loop={true}
+            autoplay={true}
+          />
+        </div>
       </div>
     );
   }
