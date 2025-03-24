@@ -2,7 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/shop": "pages/shop.js",
   "/": "pages/index.js",
-  "/paintings/[id]": "pages/paintings/[id].js"
+  "/contact": "pages/contact.js",
+  "/about": "pages/about.js",
+  "/shop": "pages/shop.js",
+  "/custom-painting": "pages/custom-painting.js"
 }
