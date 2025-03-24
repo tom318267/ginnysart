@@ -4,6 +4,7 @@ import { addToCart } from "../redux/slices/cartSlice";
 import { usePaintings } from "../hooks/usePaintings";
 import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
+import { useRouter } from "next/router";
 // Import your Lottie animation JSON file
 import paintingAnimation from "../assets/painting-animation.json";
 
@@ -22,6 +23,7 @@ const ShopSection: React.FC = () => {
   const [priceRange, setPriceRange] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("default");
   const [category, setCategory] = useState<string>("all");
+  const router = useRouter();
 
   // Get unique categories from paintings
   const categories = [...new Set(paintings.map((p) => p.category))];
@@ -37,6 +39,10 @@ const ShopSection: React.FC = () => {
         border: "1px solid #6B46C1",
       },
     });
+  };
+
+  const handlePaintingClick = (paintingId: string) => {
+    router.push(`/paintings/${paintingId}`);
   };
 
   // Filter and sort paintings
@@ -151,7 +157,7 @@ const ShopSection: React.FC = () => {
         </div>
 
         {/* Horizontal Line */}
-        <hr className="border-gray-200 mb-12 mx-4 lg:mx-8" />
+        <hr className="border-gray-300 mb-12 mx-4 lg:mx-8" />
 
         {/* Paintings Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8">
@@ -160,7 +166,10 @@ const ShopSection: React.FC = () => {
               key={painting.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden animate-shopSlideUp hover:-translate-y-2 transition-transform duration-300"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div
+                className="relative aspect-[4/3] overflow-hidden cursor-pointer"
+                onClick={() => handlePaintingClick(painting.id)}
+              >
                 <img
                   src={painting.imageUrl}
                   alt={painting.title}
@@ -169,7 +178,10 @@ const ShopSection: React.FC = () => {
               </div>
 
               <div className="p-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                <h2
+                  className="text-xl font-semibold text-gray-800 mb-2 cursor-pointer hover:text-custom-purple"
+                  onClick={() => handlePaintingClick(painting.id)}
+                >
                   {painting.title}
                 </h2>
                 <p className="text-gray-600 mb-2">By {painting.artist}</p>
@@ -184,7 +196,10 @@ const ShopSection: React.FC = () => {
                     className="inline-block uppercase relative bg-custom-purple text-white px-6 py-3 rounded shadow-md text-sm
                     before:absolute before:inset-0 before:bg-gradient-to-r before:from-custom-purple before:to-light-purple before:opacity-0 before:transition-opacity before:duration-300 before:rounded-md
                     hover:before:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out overflow-hidden"
-                    onClick={() => handleAddToCart(painting)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleAddToCart(painting);
+                    }}
                   >
                     <span className="relative z-10">ADD TO CART</span>
                   </button>

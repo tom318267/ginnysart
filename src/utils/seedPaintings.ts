@@ -42,6 +42,16 @@ const paintings = [
     description: "Abstract interpretation of ocean waves",
     available: true,
   },
+  {
+    title: "Flowers Painting",
+    artist: "Virginia Smith",
+    price: 100,
+    imageUrl: "/images/flowers1.webp",
+    dimensions: '30" x 40"',
+    category: "floral",
+    description: "Beautiful flowers in a vase",
+    available: true,
+  },
   // Add more paintings as needed
 ];
 

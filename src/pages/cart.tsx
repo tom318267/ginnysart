@@ -29,7 +29,7 @@ const CartPage = () => {
         </h1>
 
         {/* Horizontal Line */}
-        <hr className="border-gray-200 mb-12" />
+        <hr className="border-gray-300 mb-12" />
 
         {cartItems.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12">
@@ -50,7 +50,7 @@ const CartPage = () => {
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col md:flex-row gap-4 border-b border-gray-200 py-4"
+                  className="flex flex-col md:flex-row gap-4 border-b border-gray-300 py-4"
                 >
                   <div className="flex items-start gap-4 flex-grow">
                     <div className="relative w-24 h-24 flex-shrink-0">
