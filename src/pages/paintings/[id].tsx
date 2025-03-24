@@ -183,6 +183,7 @@ const PaintingDetail = () => {
         {/* Similar Paintings Section */}
         {similarPaintings && similarPaintings.length > 0 && (
           <div className="mt-16">
+            <hr className="border-gray-300 mb-8" />
             <h2 className="text-2xl font-bold text-gray-800 mb-8">
               Similar Paintings
             </h2>

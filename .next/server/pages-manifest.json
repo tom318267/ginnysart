@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/custom-painting": "pages/api/custom-painting.js",
-  "/custom-painting": "pages/custom-painting.js",
-  "/contact": "pages/contact.js"
+  "/shop": "pages/shop.js",
+  "/paintings/[id]": "pages/paintings/[id].js",
+  "/cart": "pages/cart.js",
+  "/": "pages/index.js"
 }
