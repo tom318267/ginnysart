@@ -27,25 +27,25 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/about": [
+    "/cart": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/about.js"
-    ],
-    "/contact": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/contact.js"
+      "static/chunks/pages/cart.js"
     ],
     "/custom-painting": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/custom-painting.js"
     ],
-    "/shop": [
+    "/paintings/[id]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/shop.js"
+      "static/chunks/pages/paintings/[id].js"
+    ],
+    "/privacy-policy": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/privacy-policy.js"
     ]
   },
   "ampFirstPages": []

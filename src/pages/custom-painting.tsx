@@ -63,14 +63,14 @@ const CustomPaintingPage = () => {
 
   return (
     <section
-      className="relative py-[60px] lg:py-[120px] px-4 lg:px-8 bg-cover bg-right bg-no-repeat"
+      className="relative py-[60px] lg:py-[120px] px-4 lg:px-8 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: 'url("/images/purpleflower.jpg")',
+        backgroundImage: 'url("/images/orangeback2.jpg")',
         imageRendering: "crisp-edges",
         // For Safari support
       }}
     >
-      <div className="absolute inset-0 bg-white/40"></div>
+      <div className="absolute inset-0 bg-white/80 md:bg-white/60"></div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 px-4 lg:px-8 lg:grid-cols-2 gap-12">

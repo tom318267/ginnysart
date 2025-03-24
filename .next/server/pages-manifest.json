@@ -3,8 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/contact": "pages/contact.js",
-  "/about": "pages/about.js",
-  "/shop": "pages/shop.js",
-  "/custom-painting": "pages/custom-painting.js"
+  "/custom-painting": "pages/custom-painting.js",
+  "/privacy-policy": "pages/privacy-policy.js",
+  "/paintings/[id]": "pages/paintings/[id].js",
+  "/cart": "pages/cart.js"
 }
