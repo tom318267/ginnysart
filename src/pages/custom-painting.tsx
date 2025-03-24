@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const selectClassName = `p-2 pl-4 pr-10 border border-gray-300 rounded-md text-sm w-full 
   focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-custom-purple
@@ -18,6 +18,13 @@ const CustomPaintingPage = () => {
     "idle" | "submitting" | "success" | "error"
   >("idle");
   const [message, setMessage] = useState("");
+  const successMessageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (status === "success" && successMessageRef.current) {
+      successMessageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [status]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -139,7 +146,10 @@ const CustomPaintingPage = () => {
           {/* Request Form */}
           <div className="bg-white rounded-lg shadow-xl p-8 animate-fade-up-2 opacity-0 hover:shadow-2xl transition-shadow duration-300">
             {status === "success" && (
-              <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-md">
+              <div
+                ref={successMessageRef}
+                className="mb-6 p-4 bg-green-50 text-green-700 rounded-md"
+              >
                 {message}
               </div>
             )}
