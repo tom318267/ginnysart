@@ -110,7 +110,7 @@ const PaintingDetail = () => {
               <h1 className="text-4xl font-bold text-gray-800 mb-2">
                 {painting.title}
               </h1>
-              <p className="text-xl text-gray-600 mb-4">By {painting.artist}</p>
+
               <p className="text-gray-700 leading-relaxed">
                 {painting.description}
               </p>

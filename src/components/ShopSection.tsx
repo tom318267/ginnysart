@@ -5,6 +5,7 @@ import { usePaintings } from "../hooks/usePaintings";
 import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
+import Image from "next/image";
 // Import your Lottie animation JSON file
 import paintingAnimation from "../assets/painting-animation.json";
 
@@ -170,10 +171,12 @@ const ShopSection: React.FC = () => {
                 className="relative aspect-[4/3] overflow-hidden cursor-pointer"
                 onClick={() => handlePaintingClick(painting.id)}
               >
-                <img
+                <Image
                   src={painting.imageUrl}
                   alt={painting.title}
-                  className="w-full h-full object-contain bg-gray-50 p-4"
+                  fill
+                  className="object-contain bg-gray-50 p-4"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
 
@@ -184,7 +187,6 @@ const ShopSection: React.FC = () => {
                 >
                   {painting.title}
                 </h2>
-                <p className="text-gray-600 mb-2">By {painting.artist}</p>
                 <p className="text-gray-500 text-sm mb-4">
                   Dimensions: {painting.dimensions}
                 </p>

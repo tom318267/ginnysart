@@ -5,7 +5,6 @@ import { db } from "../lib/firebase";
 export interface Painting {
   id: string;
   title: string;
-  artist: string;
   price: number;
   imageUrl: string;
   dimensions: string;

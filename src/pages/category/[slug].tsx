@@ -91,7 +91,6 @@ const CategoryPage = () => {
                 <h2 className="text-xl font-semibold text-gray-800 mb-2 cursor-pointer hover:text-custom-purple">
                   {painting.title}
                 </h2>
-                <p className="text-gray-600 mb-2">By {painting.artist}</p>
                 <p className="text-gray-500 text-sm mb-4">
                   Dimensions: {painting.dimensions}
                 </p>
