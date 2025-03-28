@@ -31,13 +31,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center relative">
           {/* Logo */}
           <Link href="/">
-            <Image
+            <img
               src="/images/ginnylogo.svg"
               alt="Logo"
-              width={48}
-              height={48}
-              className="cursor-pointer"
-              unoptimized // ← Critical for SVG sharpness
+              className="cursor-pointer w-12 h-auto"
             />
           </Link>
 

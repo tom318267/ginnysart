@@ -10,11 +10,5 @@
     "files": [
       "static/chunks/src_components_Navbar_tsx.js"
     ]
-  },
-  "paintings/[id].tsx -> lottie-react": {
-    "id": "paintings/[id].tsx -> lottie-react",
-    "files": [
-      "static/chunks/node_modules_lottie-react_build_index_umd_js.js"
-    ]
   }
 }
