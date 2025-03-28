@@ -32,11 +32,12 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/images/logo4.webp"
+              src="/images/ginnylogo.svg"
               alt="Logo"
               width={48}
               height={48}
-              className="cursor-pointer w-[48px] h-[48px]"
+              className="cursor-pointer"
+              unoptimized // ← Critical for SVG sharpness
             />
           </Link>
 
