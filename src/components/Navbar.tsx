@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/images/ginnylogo.svg"
+              src="/images/logo4.webp"
               alt="Logo"
               width={48}
               height={48}
