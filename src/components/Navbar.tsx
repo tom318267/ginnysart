@@ -31,10 +31,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center relative">
           {/* Logo */}
           <Link href="/">
-            <img
-              src="/images/ginnylogo.svg"
+            <Image
+              src="/images/logo5.png"
               alt="Logo"
-              className="cursor-pointer w-12 h-auto"
+              width={48}
+              height={48}
+              className="cursor-pointer"
             />
           </Link>
 
