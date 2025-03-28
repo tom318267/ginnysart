@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/images/logo5.png"
+              src="/images/vlogo.svg"
               alt="Logo"
               width={96} // 2x the display size for retina
               height={96}
