@@ -34,10 +34,9 @@ const Navbar = () => {
             <Image
               src="/images/logo5.png"
               alt="Logo"
-              width={48}
-              height={48}
-              className="cursor-pointer"
-              objectFit="contain"
+              width={96} // 2x the display size for retina
+              height={96}
+              className="cursor-pointer w-12 h-auto" // w-12 = 48px in Tailwind
             />
           </Link>
 
