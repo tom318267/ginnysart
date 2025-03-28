@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store"; // Adjust path as needed
 
@@ -27,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full py-8 relative z-50">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-8">
         <div className="flex justify-between items-center relative">
           {/* Logo */}
           <Link href="/">
