@@ -36,7 +36,7 @@ const PaintingCategories = () => {
     {
       title: "Abstract",
       slug: "abstract",
-      image: "/images/abstract.svg",
+      image: "/images/abstract.webp",
       width: 156,
       height: 149,
       description:
@@ -47,7 +47,7 @@ const PaintingCategories = () => {
     {
       title: "Landscape",
       slug: "landscape",
-      image: "/images/landscape.svg",
+      image: "/images/landscape.webp",
       width: 244,
       height: 166,
       description:
@@ -58,7 +58,7 @@ const PaintingCategories = () => {
     {
       title: "Floral",
       slug: "floral",
-      image: "/images/floral.svg",
+      image: "/images/floral.webp",
       width: 120,
       height: 189,
       description:
