@@ -31,13 +31,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center relative">
           {/* Logo */}
           <Link href="/">
-            <Image
-              src="/images/vlogo.svg"
-              alt="Logo"
-              width={96} // 2x the display size for retina
-              height={96}
-              className="cursor-pointer w-12 h-auto" // w-12 = 48px in Tailwind
-            />
+            <Link href="/">
+              <img
+                src="/images/ginnylogo.svg" // Pure vector SVG
+                alt="Logo"
+                className="w-12 h-auto" // 48px wide, height auto
+              />
+            </Link>
           </Link>
 
           {/* Mobile Menu Button and Cart Icon Container */}
