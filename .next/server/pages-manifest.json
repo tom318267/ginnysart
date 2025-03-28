@@ -4,5 +4,6 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/about": "pages/about.js",
+  "/404": "pages/404.js",
   "/custom-painting": "pages/custom-painting.js"
 }

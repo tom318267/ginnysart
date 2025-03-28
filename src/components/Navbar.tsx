@@ -32,11 +32,16 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/">
             <Link href="/">
-              <img
-                src="/images/ginnylogo.svg" // Pure vector SVG
-                alt="Logo"
-                className="w-12 h-auto" // 48px wide, height auto
-              />
+              <Link href="/">
+                <Image
+                  src="/images/vlogo2.png" // Updated path
+                  alt="Logo"
+                  width={96} // 2x intended display size (48px → 96px)
+                  height={96}
+                  className="w-12 h-auto" // w-12 = 48px in Tailwind
+                  priority // Preload if above the fold
+                />
+              </Link>
             </Link>
           </Link>
 
