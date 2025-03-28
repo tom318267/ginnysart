@@ -33,14 +33,13 @@ const Navbar = () => {
           <Link href="/">
             <Link href="/">
               <Link href="/">
-                <Image
-                  src="/images/vlogo2.png" // Updated path
-                  alt="Logo"
-                  width={96} // 2x intended display size (48px → 96px)
-                  height={96}
-                  className="w-12 h-auto" // w-12 = 48px in Tailwind
-                  priority // Preload if above the fold
-                />
+                <div className="flex-shrink-0">
+                  <img
+                    src="/images/vlogo2.png"
+                    alt="virginia's art studio logo"
+                    className="h-12 w-12 md:h-16 md:w-16 object-contain"
+                  />
+                </div>
               </Link>
             </Link>
           </Link>
