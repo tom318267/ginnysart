@@ -37,6 +37,7 @@ const Navbar = () => {
               width={48}
               height={48}
               className="cursor-pointer"
+              objectFit="contain"
             />
           </Link>
 
