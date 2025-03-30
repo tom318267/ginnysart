@@ -6,28 +6,25 @@ import dynamic from "next/dynamic";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
 import Image from "next/image";
-// Import your Lottie animation JSON file
 import paintingAnimation from "../assets/painting-animation.json";
 
-// Add dynamic import for Lottie with SSR disabled
-const Lottie = dynamic(() => import("lottie-react"), {
-  ssr: false,
-});
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
-const selectClassName = `p-2 pl-3 pr-8 border border-gray-300 rounded-md text-sm w-28 
+const selectClassName = `
+  p-2 pl-3 pr-8 border border-gray-300 rounded-md text-sm w-[7.5rem] 
   focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-custom-purple
   appearance-none bg-white bg-[url('/images/chevron-down.svg')] bg-no-repeat bg-[center_right_0.5rem] bg-[length:16px_16px]
-  md:w-40 md:pl-4 md:pr-10 md:bg-[center_right_1rem]`;
+  md:w-40 md:pl-4 md:pr-10 md:bg-[center_right_1rem]
+`;
 
 const ShopSection: React.FC = () => {
   const dispatch = useDispatch();
   const { paintings, loading, error } = usePaintings();
-  const [priceRange, setPriceRange] = useState<string>("all");
-  const [sortBy, setSortBy] = useState<string>("default");
-  const [category, setCategory] = useState<string>("all");
+  const [priceRange, setPriceRange] = useState("all");
+  const [sortBy, setSortBy] = useState("default");
+  const [category, setCategory] = useState("all");
   const router = useRouter();
 
-  // Get unique categories from paintings
   const categories = [...new Set(paintings.map((p) => p.category))];
 
   const handleAddToCart = (painting: any) => {
@@ -47,18 +44,14 @@ const ShopSection: React.FC = () => {
     router.push(`/paintings/${paintingId}`);
   };
 
-  // Filter and sort paintings
   const filteredPaintings = paintings
     .filter((painting) => {
-      // Category filter
       if (
         category !== "all" &&
         painting.category.toLowerCase() !== category.toLowerCase()
-      ) {
+      )
         return false;
-      }
 
-      // Price filter
       const price = Number(painting.price);
       switch (priceRange) {
         case "under100":
@@ -67,7 +60,7 @@ const ShopSection: React.FC = () => {
           return price >= 100 && price <= 200;
         case "over200":
           return price > 200;
-        default: // "all"
+        default:
           return true;
       }
     })
@@ -88,11 +81,7 @@ const ShopSection: React.FC = () => {
     return (
       <div className="flex items-center justify-center py-12">
         <div className="w-32 h-32">
-          <Lottie
-            animationData={paintingAnimation}
-            loop={true}
-            autoplay={true}
-          />
+          <Lottie animationData={paintingAnimation} loop autoplay />
         </div>
       </div>
     );
@@ -106,13 +95,12 @@ const ShopSection: React.FC = () => {
     <section className="py-16 px-4 lg:px-8 bg-gradient-to-br from-[#F8F7FF] via-[#FCFAFF] to-[#FFFFFF]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col px-4 lg:px-8 md:flex-row md:items-center md:justify-between mb-12">
-          <h1 className="text-4xl md:text-5xl leading-tight md:leading-[60px] font-bold text-black animate-shopFadeIn mb-4 md:mb-0 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 md:mb-0 text-center md:text-left">
             Available Paintings
           </h1>
 
-          <div className="flex items-center justify-center md:justify-between gap-2 md:gap-8">
-            <div className="flex flex-row flex-wrap justify-center md:justify-start gap-2 md:gap-4 items-center animate-shopFadeIn">
-              {/* Category Filter */}
+          <div className="w-full md:w-auto overflow-x-auto">
+            <div className="flex gap-2 md:gap-4 items-center min-w-[500px]">
               <select
                 className={selectClassName}
                 value={category}
@@ -126,7 +114,6 @@ const ShopSection: React.FC = () => {
                 ))}
               </select>
 
-              {/* Price Range Filter */}
               <select
                 className={selectClassName}
                 value={priceRange}
@@ -138,7 +125,6 @@ const ShopSection: React.FC = () => {
                 <option value="over200">Over $200</option>
               </select>
 
-              {/* Sort By */}
               <select
                 className={selectClassName}
                 value={sortBy}
@@ -150,23 +136,20 @@ const ShopSection: React.FC = () => {
                 <option value="name">Name</option>
               </select>
 
-              {/* Results Count */}
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-gray-600 whitespace-nowrap">
                 {filteredPaintings.length} paintings
               </span>
             </div>
           </div>
         </div>
 
-        {/* Horizontal Line */}
         <hr className="border-gray-300 mb-12 mx-4 lg:mx-8" />
 
-        {/* Paintings Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-8">
           {filteredPaintings.map((painting) => (
             <div
               key={painting.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden animate-shopSlideUp hover:-translate-y-2 transition-transform duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300"
             >
               <div
                 className="relative aspect-[4/3] overflow-hidden cursor-pointer"
