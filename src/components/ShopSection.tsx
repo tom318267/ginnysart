@@ -14,9 +14,10 @@ const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
 });
 
-const selectClassName = `p-2 pl-4 pr-10 border border-gray-300 rounded-md text-sm w-40 
+const selectClassName = `p-2 pl-3 pr-8 border border-gray-300 rounded-md text-sm w-28 
   focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-custom-purple
-  appearance-none bg-white bg-[url('/images/chevron-down.svg')] bg-no-repeat bg-[center_right_1rem] bg-[length:16px_16px]`;
+  appearance-none bg-white bg-[url('/images/chevron-down.svg')] bg-no-repeat bg-[center_right_0.5rem] bg-[length:16px_16px]
+  md:w-40 md:pl-4 md:pr-10 md:bg-[center_right_1rem]`;
 
 const ShopSection: React.FC = () => {
   const dispatch = useDispatch();
@@ -109,8 +110,8 @@ const ShopSection: React.FC = () => {
             Available Paintings
           </h1>
 
-          <div className="flex items-center justify-center md:justify-between gap-8">
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 items-center animate-shopFadeIn">
+          <div className="flex items-center justify-center md:justify-between gap-2 md:gap-8">
+            <div className="flex flex-row flex-wrap justify-center md:justify-start gap-2 md:gap-4 items-center animate-shopFadeIn">
               {/* Category Filter */}
               <select
                 className={selectClassName}
