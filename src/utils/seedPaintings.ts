@@ -1,5 +1,5 @@
 import { db } from "../lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 const paintings = [
   {
@@ -92,7 +92,24 @@ const paintings = [
     description: "Pots of flowers",
     available: true,
   },
-  // Add more paintings as needed
+  {
+    title: "Peacock",
+    price: 300,
+    imageUrl: "/images/peacock.webp",
+    dimensions: '24" x 36"',
+    category: "landscape",
+    description: "Peacock",
+    available: true,
+  },
+  {
+    title: "Wisteria",
+    price: 250,
+    imageUrl: "/images/wisteria.webp",
+    dimensions: '23" x 23"',
+    category: "floral",
+    description: "Wisteria",
+    available: true,
+  },
 ];
 
 export const seedPaintings = async () => {
@@ -105,8 +122,24 @@ export const seedPaintings = async () => {
     console.log("Starting to seed paintings...");
     const paintingsRef = collection(db, "paintings");
 
+    // Get all existing paintings
+    const existingPaintings = await getDocs(paintingsRef);
+    const existingTitles = new Set(
+      existingPaintings.docs.map((doc) => doc.data().title)
+    );
+
+    // Filter out paintings that already exist
+    const newPaintings = paintings.filter(
+      (painting) => !existingTitles.has(painting.title)
+    );
+
+    if (newPaintings.length === 0) {
+      console.log("No new paintings to add!");
+      return [];
+    }
+
     const results = await Promise.all(
-      paintings.map(async (painting) => {
+      newPaintings.map(async (painting) => {
         try {
           const docRef = await addDoc(paintingsRef, painting);
           console.log(
@@ -120,7 +153,7 @@ export const seedPaintings = async () => {
       })
     );
 
-    console.log(`Successfully added ${results.length} paintings!`);
+    console.log(`Successfully added ${results.length} new paintings!`);
     return results;
   } catch (error) {
     console.error("Error seeding paintings:", error);
