@@ -93,7 +93,7 @@ const ContactPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
                   <p className="text-gray-600 text-base lg:text-lg">
-                    (215) 555-0123
+                    (215) 913-2056
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const ContactPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">Email</h3>
                   <p className="text-gray-600 text-base lg:text-lg">
-                    virginia@example.com
+                    vlouisehampton@gmail.com
                   </p>
                 </div>
               </div>
