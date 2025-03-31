@@ -11,8 +11,8 @@ import paintingAnimation from "../assets/painting-animation.json";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const selectClassName = `
-  p-2 pl-3 pr-8 border border-gray-300 rounded-md text-sm w-[7.5rem] 
-  focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-custom-purple
+  p-2 pl-3 pr-8 text-sm w-[7.5rem] border border-custom-purple rounded-md 
+  focus:outline-none focus:ring-0 focus:border-2 focus:border-custom-purple
   appearance-none bg-white bg-[url('/images/chevron-down.svg')] bg-no-repeat bg-[center_right_0.5rem] bg-[length:16px_16px]
   md:w-40 md:pl-4 md:pr-10 md:bg-[center_right_1rem]
 `;
