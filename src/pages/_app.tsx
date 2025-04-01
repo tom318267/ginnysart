@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../redux/store";
 import { Toaster } from "react-hot-toast";
+import Head from "next/head";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -36,15 +37,34 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={<LoadingScreen />} persistor={persistor}>
-        <Toaster />
-        <main className={poppins.className}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </main>
-      </PersistGate>
-    </Provider>
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon1.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon1.png"
+        />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#6B46C1" />
+      </Head>
+      <Provider store={store}>
+        <PersistGate loading={<LoadingScreen />} persistor={persistor}>
+          <Toaster />
+          <main className={poppins.className}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </main>
+        </PersistGate>
+      </Provider>
+    </>
   );
 }
