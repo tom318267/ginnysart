@@ -33,10 +33,10 @@ const EveryPaintingSection = () => {
         <div className="lg:w-1/2 px-4 lg:px-0 relative">
           <div className="relative lg:absolute lg:-top-[560px] lg:left-0">
             <Image
-              src="/images/paintgirl.jpg"
+              src="/images/ginnypic.webp"
               alt="Artist Painting"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               className="rounded-lg shadow-lg opacity-0 translate-y-10 animate-on-scroll"
             />
           </div>
