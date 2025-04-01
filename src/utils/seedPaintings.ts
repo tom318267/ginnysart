@@ -85,7 +85,7 @@ const paintings = [
   },
   {
     title: "Pots of Flowers",
-    price: 75,
+    price: 100,
     imageUrl: "/images/pots.webp",
     dimensions: '24" x 12"',
     category: "floral",

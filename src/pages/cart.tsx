@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { removeFromCart, updateQuantity } from "../redux/slices/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
+import { calculateShipping } from "../utils/calculateShipping";
 
 // Add the shared select className at the top with a smaller width
 const selectClassName = `p-2 pl-4 pr-10 border border-gray-300 rounded-md text-sm w-24 
@@ -13,6 +14,7 @@ const selectClassName = `p-2 pl-4 pr-10 border border-gray-300 rounded-md text-s
 const CartPage = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
+  const [country, setCountry] = useState("US");
 
   const calculateTotal = () => {
     return cartItems.reduce(
@@ -20,6 +22,10 @@ const CartPage = () => {
       0
     );
   };
+
+  const subtotal = calculateTotal();
+  const shipping = calculateShipping(subtotal, country);
+  const total = subtotal + shipping;
 
   return (
     <section className="py-[60px] lg:py-[120px] px-4 lg:px-8 bg-gradient-to-br from-[#F8F7FF] via-[#FCFAFF] to-[#FFFFFF]">
@@ -66,9 +72,7 @@ const CartPage = () => {
                         <h3 className="text-base font-medium text-gray-900">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-gray-500">
-                          By {item.artist}
-                        </p>
+
                         <p className="text-sm text-gray-500 mt-1">
                           Dimensions: {item.dimensions}
                         </p>
@@ -113,17 +117,45 @@ const CartPage = () => {
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between text-lg">
                     <span>Subtotal</span>
-                    <span>${calculateTotal().toFixed(2)}</span>
+                    <span>${subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-lg">
+
+                  <div className="flex justify-between items-center">
                     <span>Shipping</span>
-                    <span>Free</span>
+                    <div className="flex items-center gap-4">
+                      <select
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        className={selectClassName}
+                      >
+                        <option value="US">United States</option>
+                        <option value="INTERNATIONAL">International</option>
+                      </select>
+                      <span>${shipping.toFixed(2)}</span>
+                    </div>
                   </div>
+
+                  {shipping > 0 && (
+                    <p className="text-sm text-gray-600">
+                      {country === "US"
+                        ? `Add $${(500 - subtotal).toFixed(
+                            2
+                          )} more for free shipping`
+                        : `Add $${(750 - subtotal).toFixed(
+                            2
+                          )} more for free shipping`}
+                    </p>
+                  )}
+                  {shipping === 0 && (
+                    <p className="text-green-600 text-sm">
+                      Free shipping applied!
+                    </p>
+                  )}
                 </div>
                 <div className="border-t border-gray-200 pt-6 mb-8">
                   <div className="flex justify-between text-lg font-semibold">
                     <span>Total</span>
-                    <span>${calculateTotal().toFixed(2)}</span>
+                    <span>${total.toFixed(2)}</span>
                   </div>
                 </div>
                 <button
