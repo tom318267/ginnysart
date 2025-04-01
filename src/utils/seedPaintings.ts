@@ -1,5 +1,5 @@
 import { db } from "../lib/firebase";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc, getDocs, updateDoc } from "firebase/firestore";
 
 const paintings = [
   {
@@ -85,7 +85,7 @@ const paintings = [
   },
   {
     title: "Pots of Flowers",
-    price: 100,
+    price: 75,
     imageUrl: "/images/pots.webp",
     dimensions: '24" x 12"',
     category: "floral",
@@ -119,44 +119,46 @@ export const seedPaintings = async () => {
   }
 
   try {
-    console.log("Starting to seed paintings...");
+    console.log("Starting to update paintings...");
     const paintingsRef = collection(db, "paintings");
 
     // Get all existing paintings
     const existingPaintings = await getDocs(paintingsRef);
-    const existingTitles = new Set(
-      existingPaintings.docs.map((doc) => doc.data().title)
-    );
 
-    // Filter out paintings that already exist
-    const newPaintings = paintings.filter(
-      (painting) => !existingTitles.has(painting.title)
-    );
-
-    if (newPaintings.length === 0) {
-      console.log("No new paintings to add!");
-      return [];
-    }
-
+    // Update existing paintings and add new ones
     const results = await Promise.all(
-      newPaintings.map(async (painting) => {
+      paintings.map(async (painting) => {
+        const existingPainting = existingPaintings.docs.find(
+          (doc) => doc.data().title === painting.title
+        );
+
         try {
-          const docRef = await addDoc(paintingsRef, painting);
-          console.log(
-            `Added painting: ${painting.title} with ID: ${docRef.id}`
-          );
-          return docRef;
+          if (existingPainting) {
+            // Update existing painting
+            const docRef = existingPainting.ref;
+            await updateDoc(docRef, painting);
+            console.log(`Updated painting: ${painting.title}`);
+            return docRef;
+          } else {
+            // Add new painting
+            const docRef = await addDoc(paintingsRef, painting);
+            console.log(`Added new painting: ${painting.title}`);
+            return docRef;
+          }
         } catch (error) {
-          console.error(`Failed to add painting ${painting.title}:`, error);
+          console.error(
+            `Failed to update/add painting ${painting.title}:`,
+            error
+          );
           throw error;
         }
       })
     );
 
-    console.log(`Successfully added ${results.length} new paintings!`);
+    console.log(`Successfully processed ${results.length} paintings!`);
     return results;
   } catch (error) {
-    console.error("Error seeding paintings:", error);
+    console.error("Error processing paintings:", error);
     throw error;
   }
 };

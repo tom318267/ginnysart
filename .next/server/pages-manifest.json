@@ -3,6 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
+  "/admin/seed": "pages/admin/seed.js",
   "/shop": "pages/shop.js",
-  "/contact": "pages/contact.js"
+  "/about": "pages/about.js",
+  "/category/[slug]": "pages/category/[slug].js"
 }
