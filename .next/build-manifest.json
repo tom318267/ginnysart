@@ -27,15 +27,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/cart": [
+    "/contact": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/cart.js"
+      "static/chunks/pages/contact.js"
     ],
-    "/shop": [
+    "/terms-of-service": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/shop.js"
+      "static/chunks/pages/terms-of-service.js"
     ]
   },
   "ampFirstPages": []
