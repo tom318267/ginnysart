@@ -1,22 +1,32 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import { addToCart } from "../../redux/slices/cartSlice";
 import CartPage from "../../pages/cart";
 
 describe("Checkout Flow", () => {
   test("complete checkout process", async () => {
+    // Add an item to cart first
+    store.dispatch(
+      addToCart({
+        id: "1",
+        title: "Test Painting",
+        price: 100,
+        imageUrl: "/test.jpg",
+        dimensions: "10x10",
+        quantity: 1,
+        artist: "Test Artist",
+        category: "landscape",
+      })
+    );
+
     render(
       <Provider store={store}>
         <CartPage />
       </Provider>
     );
 
-    // Add items to cart
-    // Check shipping calculation
-    // Test checkout button
-    // Verify order confirmation
-
-    const checkoutButton = screen.getByText("Proceed to Checkout");
+    const checkoutButton = screen.getByText(/proceed to checkout/i);
     fireEvent.click(checkoutButton);
 
     await waitFor(() => {

@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import { addToCart } from "../../redux/slices/cartSlice";
 import CartItem from "../../components/CartItem";
 
 const mockPainting = {
@@ -13,6 +14,23 @@ const mockPainting = {
 };
 
 describe("CartItem", () => {
+  beforeEach(() => {
+    // Reset store and add test item
+    store.dispatch({ type: "cart/clearCart" });
+    store.dispatch(
+      addToCart({
+        id: "1",
+        title: "Test Painting",
+        price: 100,
+        imageUrl: "/test.jpg",
+        dimensions: "10x10",
+        artist: "Test Artist",
+        category: "Test Category",
+        quantity: 1,
+      })
+    );
+  });
+
   test("renders cart item correctly", () => {
     render(
       <Provider store={store}>
@@ -34,7 +52,6 @@ describe("CartItem", () => {
     const quantitySelect = screen.getByRole("combobox");
     fireEvent.change(quantitySelect, { target: { value: "2" } });
 
-    // Check if redux store was updated
     expect(store.getState().cart.items[0].quantity).toBe(2);
   });
 });

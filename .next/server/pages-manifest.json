@@ -2,10 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.js",
-  "/shop": "pages/shop.js",
-  "/about": "pages/about.js",
+  "/cart": "pages/cart.js",
   "/": "pages/index.js",
-  "/contact": "pages/contact.js",
-  "/cart": "pages/cart.js"
+  "/shop": "pages/shop.js",
+  "/paintings/[id]": "pages/paintings/[id].js"
 }
