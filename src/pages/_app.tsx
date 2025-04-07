@@ -1,20 +1,13 @@
 import "../styles/globals.css";
+import "../styles/fonts.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import React, { useEffect, useState } from "react";
-import { Poppins } from "next/font/google";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../redux/store";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
-
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const LoadingScreen = () => (
   <div className="min-h-screen flex items-center justify-center bg-white">
@@ -58,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Provider store={store}>
         <PersistGate loading={<LoadingScreen />} persistor={persistor}>
           <Toaster />
-          <main className={poppins.className}>
+          <main className="font-poppins">
             <Layout>
               <Component {...pageProps} />
             </Layout>

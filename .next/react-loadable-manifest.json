@@ -1,4 +1,16 @@
 {
+  "../../node_modules/next/dist/client/index.js -> ../pages/_app": {
+    "id": "../../node_modules/next/dist/client/index.js -> ../pages/_app",
+    "files": [
+      "static/chunks/node_modules_next_dist_pages__app_js.js"
+    ]
+  },
+  "../../node_modules/next/dist/client/index.js -> ../pages/_error": {
+    "id": "../../node_modules/next/dist/client/index.js -> ../pages/_error",
+    "files": [
+      "static/chunks/node_modules_next_dist_pages__error_js.js"
+    ]
+  },
   "../components/Layout.tsx -> ./Footer": {
     "id": "../components/Layout.tsx -> ./Footer",
     "files": [
@@ -13,12 +25,6 @@
   },
   "../components/ShopSection.tsx -> lottie-react": {
     "id": "../components/ShopSection.tsx -> lottie-react",
-    "files": [
-      "static/chunks/node_modules_lottie-react_build_index_umd_js.js"
-    ]
-  },
-  "paintings/[id].tsx -> lottie-react": {
-    "id": "paintings/[id].tsx -> lottie-react",
     "files": [
       "static/chunks/node_modules_lottie-react_build_index_umd_js.js"
     ]
