@@ -3,6 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/custom-painting": "pages/custom-painting.js",
+  "/shop": "pages/shop.js",
+  "/about": "pages/about.js",
   "/category/[slug]": "pages/category/[slug].js"
 }

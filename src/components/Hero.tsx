@@ -60,7 +60,7 @@ const Hero = () => {
             {/* Painting (on top of the frame, moved slightly right) */}
             <div className="absolute top-[10%] left-[12%] w-[80%] lg:w-[85%] aspect-[0.71] animate-paintingFloat [animation-delay:1200ms] opacity-0">
               <Image
-                src="/images/heropic.webp"
+                src="/images/gpainting4.webp"
                 alt="Featured Painting"
                 width={347}
                 height={489}
