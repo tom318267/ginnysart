@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { usePaintings } from "../../hooks/usePaintings";
 import Image from "next/image";
@@ -18,11 +18,39 @@ const CategoryPage = () => {
   const dispatch = useDispatch();
   const { slug } = router.query;
   const { paintings, loading, error } = usePaintings();
+  const [priceRange, setPriceRange] = useState("all");
+  const [sortBy, setSortBy] = useState("default");
 
-  // Filter paintings by category
-  const categoryPaintings = paintings?.filter(
-    (p) => p.category.toLowerCase() === slug?.toString().toLowerCase()
-  );
+  // Filter paintings by category and price range
+  const filteredPaintings = paintings
+    ?.filter((p) => {
+      if (p.category.toLowerCase() !== slug?.toString().toLowerCase())
+        return false;
+
+      const price = Number(p.price);
+      switch (priceRange) {
+        case "under100":
+          return price < 100;
+        case "100-200":
+          return price >= 100 && price <= 200;
+        case "over200":
+          return price > 200;
+        default:
+          return true;
+      }
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "priceLow":
+          return Number(a.price) - Number(b.price);
+        case "priceHigh":
+          return Number(b.price) - Number(a.price);
+        case "name":
+          return a.title.localeCompare(b.title);
+        default:
+          return 0;
+      }
+    });
 
   const categoryTitle = slug
     ? slug.toString().charAt(0).toUpperCase() + slug.toString().slice(1)
@@ -67,14 +95,52 @@ const CategoryPage = () => {
   return (
     <section className="py-[60px] lg:py-[120px] px-4 lg:px-8 bg-gradient-to-br from-[#F8F7FF] via-[#FCFAFF] to-[#FFFFFF]">
       <div className="container mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-black mb-8 text-center">
-          {categoryTitle} Paintings
-        </h1>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 md:mb-0">
+            {categoryTitle} Paintings
+          </h1>
+
+          <div className="w-full md:w-auto overflow-x-auto">
+            <div className="flex gap-2 md:gap-4 items-center min-w-[350px]">
+              <select
+                className="p-2 pl-3 pr-8 text-sm w-[7.5rem] border border-custom-purple rounded-md 
+                  focus:outline-none focus:ring-0 focus:border-2 focus:border-custom-purple
+                  appearance-none bg-white bg-[url('/images/chevron-down.svg')] bg-no-repeat bg-[center_right_0.5rem] bg-[length:16px_16px]
+                  md:w-40 md:pl-4 md:pr-10 md:bg-[center_right_1rem]"
+                value={priceRange}
+                onChange={(e) => setPriceRange(e.target.value)}
+              >
+                <option value="all">All Prices</option>
+                <option value="under100">Under $100</option>
+                <option value="100-200">$100 - $200</option>
+                <option value="over200">Over $200</option>
+              </select>
+
+              <select
+                className="p-2 pl-3 pr-8 text-sm w-[7.5rem] border border-custom-purple rounded-md 
+                  focus:outline-none focus:ring-0 focus:border-2 focus:border-custom-purple
+                  appearance-none bg-white bg-[url('/images/chevron-down.svg')] bg-no-repeat bg-[center_right_0.5rem] bg-[length:16px_16px]
+                  md:w-40 md:pl-4 md:pr-10 md:bg-[center_right_1rem]"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+              >
+                <option value="default">Sort By</option>
+                <option value="priceLow">Price: Low to High</option>
+                <option value="priceHigh">Price: High to Low</option>
+                <option value="name">Name</option>
+              </select>
+
+              <span className="text-sm text-gray-600 whitespace-nowrap">
+                {filteredPaintings?.length} paintings
+              </span>
+            </div>
+          </div>
+        </div>
 
         <hr className="border-gray-300 mb-12" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categoryPaintings?.map((painting) => (
+          {filteredPaintings?.map((painting) => (
             <div
               key={painting.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden animate-shopSlideUp hover:-translate-y-2 transition-transform duration-300"
@@ -112,7 +178,7 @@ const CategoryPage = () => {
           ))}
         </div>
 
-        {categoryPaintings?.length === 0 && (
+        {filteredPaintings?.length === 0 && (
           <p className="text-center text-gray-600">
             No paintings found in this category.
           </p>
