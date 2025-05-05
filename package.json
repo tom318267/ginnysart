@@ -11,7 +11,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@sendgrid/mail": "^8.1.4",
+    "@stripe/stripe-js": "^7.0.0",
     "@types/nodemailer": "^6.4.17",
+    "@types/stripe": "^8.0.416",
     "firebase": "^10.8.0",
     "framer-motion": "^12.4.10",
     "lottie-react": "^2.4.1",
@@ -24,6 +26,7 @@
     "react-redux": "^9.2.0",
     "redux-persist": "^6.0.0",
     "resend": "^4.1.2",
+    "stripe": "^18.0.0",
     "swiper": "^11.2.5"
   },
   "devDependencies": {

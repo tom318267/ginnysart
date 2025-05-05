@@ -4,11 +4,16 @@ import { RootState } from "../redux/store";
 import Link from "next/link";
 import { calculateShipping } from "../utils/calculateShipping";
 import CartItem from "../components/CartItem";
+import { loadStripe } from "@stripe/stripe-js";
 
 // Add the shared select className at the top with a smaller width
 const selectClassName = `p-2 pl-4 pr-10 border border-gray-300 rounded-md text-sm w-24 
   focus:outline-none focus:ring-2 focus:ring-custom-purple focus:border-custom-purple
   appearance-none bg-white bg-[url('/images/chevron-down.svg')] bg-no-repeat bg-[center_right_1rem] bg-[length:16px_16px]`;
+
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
+);
 
 const CartPage = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -24,6 +29,33 @@ const CartPage = () => {
   const subtotal = calculateTotal();
   const shipping = calculateShipping(subtotal, country);
   const total = subtotal + shipping;
+
+  const handleCheckout = async () => {
+    try {
+      const stripe = await stripePromise;
+      if (!stripe) throw new Error("Stripe failed to load");
+
+      const response = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ items: cartItems }),
+      });
+
+      if (!response.ok) throw new Error("Network response was not ok");
+
+      const { sessionId } = await response.json();
+      const result = await stripe.redirectToCheckout({ sessionId });
+
+      if (result.error) {
+        throw new Error(result.error.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to initiate checkout. Please try again.");
+    }
+  };
 
   return (
     <section className="py-[60px] lg:py-[120px] px-4 lg:px-8 bg-gradient-to-br from-[#F8F7FF] via-[#FCFAFF] to-[#FFFFFF]">
@@ -105,6 +137,7 @@ const CartPage = () => {
                   </div>
                 </div>
                 <button
+                  onClick={handleCheckout}
                   className="w-full inline-block uppercase relative bg-custom-purple text-white px-[30px] lg:px-[40px] py-[15px] lg:py-[20px] rounded-md shadow-md text-[14px] lg:text-[16px]
                   before:absolute before:inset-0 before:bg-gradient-to-r before:from-custom-purple before:to-light-purple before:opacity-0 before:transition-opacity before:duration-300 before:rounded-md
                   hover:before:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out overflow-hidden"

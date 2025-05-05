@@ -32,6 +32,15 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <title>Virginia's Art Studio</title>
+        <meta
+          name="description"
+          content="Discover unique custom paintings, art gallery collections, and professional art studio services. We offer original artwork, commissioned pieces, and various painting categories."
+        />
+        <meta
+          name="keywords"
+          content="custom paintings, art gallery, original artwork, commissioned art, art studio, painting categories, professional artist"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="icon"
