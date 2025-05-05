@@ -8,7 +8,7 @@ const paintings = [
     imageUrl: "/images/daffodils.webp",
     dimensions: '11" x 14"',
     category: "landscape",
-    description: "Yellow daffodils",
+    description: "Bright yellow daffodils in full bloom.",
     available: true,
   },
   {
@@ -17,7 +17,7 @@ const paintings = [
     imageUrl: "/images/daffodilmix.webp",
     dimensions: '14" x 18"',
     category: "floral",
-    description: "Mix of daffodils",
+    description: "A colorful blend of daffodil varieties.",
     available: true,
   },
   {
@@ -26,7 +26,7 @@ const paintings = [
     imageUrl: "/images/wimzy2.webp",
     dimensions: '10" x 20"',
     category: "floral",
-    description: "Flowers in a vase",
+    description: "Whimsical flowers arranged in a vase.",
     available: true,
   },
   {
@@ -35,7 +35,7 @@ const paintings = [
     imageUrl: "/images/hiddengarden.webp",
     dimensions: '18" x 24"',
     category: "floral",
-    description: "Garden of flowers",
+    description: "Lush garden hidden behind a vibrant bloom.",
     available: true,
   },
   {
@@ -44,7 +44,7 @@ const paintings = [
     imageUrl: "/images/pink.webp",
     dimensions: '20" x 16"',
     category: "floral",
-    description: "Pink tulips",
+    description: "Elegant pink tulips in full display.",
     available: true,
   },
   {
@@ -53,7 +53,7 @@ const paintings = [
     imageUrl: "/images/gardendoor.webp",
     dimensions: '16" x 20"',
     category: "landscape",
-    description: "Garden door",
+    description: "A rustic garden door surrounded by flowers.",
     available: true,
   },
   {
@@ -62,7 +62,7 @@ const paintings = [
     imageUrl: "/images/gardengate.webp",
     dimensions: '10" x 20"',
     category: "landscape",
-    description: "Garden gate",
+    description: "Inviting gate leading to a secret garden.",
     available: true,
   },
   {
@@ -71,7 +71,7 @@ const paintings = [
     imageUrl: "/images/peonie.webp",
     dimensions: '11" x 14"',
     category: "floral",
-    description: "Peonies flowers",
+    description: "Delicate peonies bursting with color.",
     available: true,
   },
   {
@@ -80,7 +80,7 @@ const paintings = [
     imageUrl: "/images/tulips.webp",
     dimensions: '11" x 14"',
     category: "floral",
-    description: "Purple tulips",
+    description: "Vibrant purple tulips full of life.",
     available: true,
   },
   {
@@ -89,7 +89,7 @@ const paintings = [
     imageUrl: "/images/pots.webp",
     dimensions: '24" x 12"',
     category: "floral",
-    description: "Pots of flowers",
+    description: "Cheerful pots overflowing with blossoms.",
     available: true,
   },
   {
@@ -98,7 +98,7 @@ const paintings = [
     imageUrl: "/images/peacock.webp",
     dimensions: '24" x 36"',
     category: "birds",
-    description: "Peacock",
+    description: "Majestic peacock with stunning colors.",
     available: true,
   },
   {
@@ -107,7 +107,7 @@ const paintings = [
     imageUrl: "/images/wisteria.webp",
     dimensions: '23" x 23"',
     category: "floral",
-    description: "Wisteria",
+    description: "Cascading wisteria vines in bloom.",
     available: true,
   },
   {
@@ -116,7 +116,7 @@ const paintings = [
     imageUrl: "/images/birds.webp",
     dimensions: '24" x 12"',
     category: "birds",
-    description: "Three birds",
+    description: "Three charming birds perched together.",
     available: true,
   },
   {
@@ -125,7 +125,7 @@ const paintings = [
     imageUrl: "/images/abstract5.webp",
     dimensions: '11" x 14"',
     category: "abstract",
-    description: "Abstract blue",
+    description: "Bold abstract painting in deep blue tones.",
     available: true,
   },
 ];
