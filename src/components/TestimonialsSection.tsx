@@ -8,7 +8,7 @@ const testimonials = [
   {
     id: 1,
     name: "Emily R.",
-    role: "Art Collector",
+    role: "Customer",
     image: "/images/emily.jpg", // Replace with actual image path
     review:
       "Absolutely breathtaking! Virginia's artwork has completely transformed my space. The colors, the details, and the emotion in every brushstroke make it truly one of a kind.",
@@ -17,7 +17,7 @@ const testimonials = [
   {
     id: 2,
     name: "Sophia M.",
-    role: "Interior Designer",
+    role: "Customer",
     image: "/images/sophia.jpg", // Replace with actual image path
     review:
       "Seeing Virginia's art in person is even more stunning than in photos. The texture, the brushstrokes, the warmth—it's something truly special. I'm in love with my new painting!",
