@@ -32,51 +32,6 @@ const testimonials = [
       "Virginia's work consistently captivates our gallery visitors. Her unique perspective and masterful technique create pieces that not only beautify spaces but also tell compelling stories.",
     rating: 5,
   },
-  {
-    id: 4,
-    name: "Sarah K.",
-    role: "Home Owner",
-    image: "/images/sarah.jpg",
-    review:
-      "Working with Virginia was a joy from start to finish. She truly listened to my vision and created a stunning piece that exceeded all my expectations. It's become the focal point of our living room.",
-    rating: 5,
-  },
-  {
-    id: 5,
-    name: "James L.",
-    role: "Corporate Art Consultant",
-    image: "/images/james.jpg",
-    review:
-      "Virginia's pieces bring life and energy to corporate spaces. Our clients are always impressed by how her art transforms their workplace into an inspiring environment.",
-    rating: 5,
-  },
-  {
-    id: 6,
-    name: "Alexandra D.",
-    role: "Restaurant Owner",
-    image: "/images/alexandra.jpg",
-    review:
-      "The commissioned piece Virginia created for our restaurant perfectly captures our vision. Our guests constantly comment on how the artwork enhances their dining experience.",
-    rating: 5,
-  },
-  {
-    id: 7,
-    name: "Robert H.",
-    role: "Private Collector",
-    image: "/images/robert.jpg",
-    review:
-      "I've been collecting art for over 20 years, and Virginia's work stands out for its emotional depth and technical excellence. Each piece tells a unique story that resonates deeply.",
-    rating: 5,
-  },
-  {
-    id: 8,
-    name: "Maria C.",
-    role: "Art Enthusiast",
-    image: "/images/maria.jpg",
-    review:
-      "The way Virginia captures light and movement in her paintings is remarkable. Her work has this amazing ability to create different moods throughout the day as natural light changes.",
-    rating: 5,
-  },
 ];
 
 const TestimonialsSection = () => {

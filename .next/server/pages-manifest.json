@@ -2,8 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
   "/shop": "pages/shop.js",
+  "/": "pages/index.js",
   "/about": "pages/about.js",
-  "/category/[slug]": "pages/category/[slug].js"
+  "/admin/seed": "pages/admin/seed.js"
 }

@@ -32,10 +32,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/about.js"
     ],
-    "/category/[slug]": [
+    "/admin/seed": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/category/[slug].js"
+      "static/chunks/pages/admin/seed.js"
     ],
     "/shop": [
       "static/chunks/webpack.js",
