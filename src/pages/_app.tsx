@@ -32,20 +32,21 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head>
-        <title>Virginia's Art Studio</title>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-JV0GB2Z0DY"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-JV0GB2Z0DY"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-JV0GB2Z0DY');
         `}
-        </Script>
+      </Script>
+
+      <Head>
+        <title>Virginia's Art Studio</title>
         <meta
           name="description"
           content="Discover unique custom paintings, art gallery collections, and professional art studio services. We offer original artwork, commissioned pieces, and various painting categories."
@@ -70,6 +71,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#6B46C1" />
       </Head>
+
       <Provider store={store}>
         <PersistGate loading={<LoadingScreen />} persistor={persistor}>
           <Toaster />
