@@ -8,6 +8,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../redux/store";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
+import Script from "next/script";
 
 const LoadingScreen = () => (
   <div className="min-h-screen flex items-center justify-center bg-white">
@@ -33,6 +34,18 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Virginia's Art Studio</title>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JV0GB2Z0DY"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JV0GB2Z0DY');
+        `}
+        </Script>
         <meta
           name="description"
           content="Discover unique custom paintings, art gallery collections, and professional art studio services. We offer original artwork, commissioned pieces, and various painting categories."
