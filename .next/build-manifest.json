@@ -32,15 +32,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/about.js"
     ],
-    "/contact": [
+    "/admin/seed": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/contact.js"
+      "static/chunks/pages/admin/seed.js"
     ],
-    "/custom-painting": [
+    "/paintings/[id]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/custom-painting.js"
+      "static/chunks/pages/paintings/[id].js"
+    ],
+    "/shop": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/shop.js"
     ]
   },
   "ampFirstPages": []

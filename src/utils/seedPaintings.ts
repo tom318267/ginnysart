@@ -128,6 +128,15 @@ const paintings = [
     description: "Bold abstract painting in deep blue tones.",
     available: true,
   },
+  {
+    title: "Pink and Purple Blooms",
+    price: 225,
+    imageUrl: "/images/stilllifeflowers.webp",
+    dimensions: '16" x 20"',
+    category: "floral",
+    description: "Pink and purple flowers in a vase.",
+    available: true,
+  },
 ];
 
 export const seedPaintings = async () => {
