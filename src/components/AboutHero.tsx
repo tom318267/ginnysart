@@ -17,9 +17,9 @@ const AboutHero = () => {
 
       {/* Content Container */}
       <div className="relative z-10 max-w-3xl px-4 lg:px-8 mx-auto animate-slideUp">
-        <h5 className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4">
+        <p className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4">
           Virginia Hampton
-        </h5>
+        </p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight md:leading-[60px] lg:leading-[80px]">
           Meet the Artist Behind the Brush
         </h1>

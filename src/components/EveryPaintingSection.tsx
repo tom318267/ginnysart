@@ -55,9 +55,9 @@ const EveryPaintingSection = () => {
             />
           </div>
 
-          <h5 className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4 opacity-0 translate-y-10 animate-on-scroll">
+          <p className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4 opacity-0 translate-y-10 animate-on-scroll">
             My Passion
-          </h5>
+          </p>
 
           <h2 className="text-3xl md:text-5xl font-bold leading-tight md:leading-[60px] text-gray-900 mb-8 relative opacity-0 translate-y-10 animate-on-scroll">
             Every Painting Tells a Story

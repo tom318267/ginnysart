@@ -13,9 +13,9 @@ const ShopHero = () => {
       }}
     >
       <div className="max-w-3xl mx-auto">
-        <h5 className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4">
+        <p className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4">
           Original Artwork
-        </h5>
+        </p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight md:leading-[60px] lg:leading-[80px]">
           Discover Handcrafted <br /> Art for Your Space
         </h1>

@@ -40,9 +40,9 @@ const CustomPaintingSection = () => {
         className="container mx-auto px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative text-center md:text-left"
       >
         <div className="max-w-lg mx-auto md:mx-0 px-4 lg:px-0 [.animate-in_&]:animate-fade-up [.animate-in_&]:animate-once">
-          <h5 className="text-light-purple uppercase text-[16px] md:text-[20px] tracking-wide mb-4 opacity-0 [.animate-in_&]:animate-fade-up-1">
+          <p className="text-light-purple uppercase text-[16px] md:text-[20px] tracking-wide mb-4 opacity-0 [.animate-in_&]:animate-fade-up-1">
             Custom Paintings
-          </h5>
+          </p>
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight md:leading-[60px] opacity-0 [.animate-in_&]:animate-fade-up-2">
             Personalized Art, Created Just for You
           </h2>

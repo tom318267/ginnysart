@@ -21,9 +21,9 @@ const Hero = () => {
         <div className="flex flex-col px-4 lg:px-8 lg:flex-row justify-between items-center gap-8 lg:gap-4">
           {/* Left side content */}
           <div className="max-w-[680px] text-center lg:text-left relative z-20">
-            <h5 className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4 animate-fadeIn [animation-delay:200ms] opacity-0">
+            <p className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4 animate-fadeIn [animation-delay:200ms] opacity-0">
               Virginia's Art Studio
-            </h5>
+            </p>
             <h1 className="text-4xl lg:text-6xl font-bold text-black mb-6 leading-tight md:leading-[60px] lg:leading-[80px] animate-slideUp [animation-delay:400ms] opacity-0">
               Bringing Beauty to Life One Brushstroke at a Time
             </h1>

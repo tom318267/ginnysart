@@ -79,9 +79,9 @@ const TestimonialsSection = () => {
       className="bg-[#F8F6FF] py-[120px] px-4 md:px-8 opacity-0"
     >
       <div className="content-wrapper opacity-0 px-4 lg:px-8 text-left max-w-4xl ml-4 md:ml-8">
-        <h5 className="text-light-purple uppercase font-normal text-[16px] md:text-[20px] mb-4">
+        <p className="text-light-purple uppercase font-normal text-[16px] md:text-[20px] mb-4">
           Client Testimonials
-        </h5>
+        </p>
         <h2 className="text-3xl md:text-5xl font-bold leading-tight md:leading-[60px] text-gray-900 mb-8">
           What Customers Are Saying
         </h2>
