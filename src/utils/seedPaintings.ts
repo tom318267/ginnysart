@@ -7,7 +7,7 @@ const paintings = [
     price: 80,
     imageUrl: "/images/daffodils.webp",
     dimensions: '11" x 14"',
-    category: "landscape",
+    category: "floral",
     description: "Bright yellow daffodils in full bloom.",
     available: true,
   },
