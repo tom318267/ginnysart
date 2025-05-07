@@ -34,7 +34,7 @@ const paintings = [
     price: 100,
     imageUrl: "/images/hiddengarden.webp",
     dimensions: '18" x 24"',
-    category: "floral",
+    category: "landscape",
     description: "Lush garden hidden behind a vibrant bloom.",
     available: true,
   },
