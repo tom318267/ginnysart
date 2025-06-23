@@ -18,7 +18,7 @@ const Hero = () => {
       />
 
       <div className="container mx-auto relative z-20">
-        <div className="flex flex-col px-4 lg:px-8 lg:flex-row justify-between items-center gap-8 lg:gap-4">
+        <div className="flex flex-col px-4 lg:px-8 lg:flex-row justify-center items-center gap-8 lg:gap-12 2xl:gap-16 max-w-7xl mx-auto">
           {/* Left side content */}
           <div className="max-w-[680px] text-center lg:text-left relative z-20">
             <p className="text-light-purple uppercase font-normal text-[16px] lg:text-[20px] tracking-wide mb-4 animate-fadeIn [animation-delay:200ms] opacity-0">
@@ -44,7 +44,7 @@ const Hero = () => {
           </div>
 
           {/* Right Side - Frame & Painting */}
-          <div className="relative w-full max-w-[300px] min-w-[200px] lg:max-w-[400px] lg:min-w-[300px] h-auto aspect-[0.87] mt-8 lg:mt-0 flex flex-col items-center">
+          <div className="relative w-full max-w-[300px] min-w-[200px] lg:max-w-[400px] lg:min-w-[300px] 2xl:max-w-[500px] 2xl:min-w-[400px] h-auto aspect-[0.87] mt-8 lg:mt-0 flex flex-col items-center">
             {/* Picture Frame (background) */}
             <div className="w-full h-full animate-frameRotate [animation-delay:800ms] opacity-0">
               <Image
@@ -58,7 +58,7 @@ const Hero = () => {
             </div>
 
             {/* Painting (on top of the frame, moved slightly right) */}
-            <div className="absolute top-[10%] left-[12%] w-[80%] lg:w-[85%] aspect-[0.71] animate-paintingFloat [animation-delay:1200ms] opacity-0">
+            <div className="absolute top-[10%] left-[12%] w-[80%] lg:w-[85%] 2xl:w-[90%] aspect-[0.71] animate-paintingFloat [animation-delay:1200ms] opacity-0">
               <Image
                 src="/images/942.webp"
                 alt="Featured Painting"
